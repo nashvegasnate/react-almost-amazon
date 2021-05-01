@@ -7,7 +7,7 @@ import {
 } from 'reactstrap';
 import PropTypes from 'prop-types';
 import { deleteAuthor } from '../helpers/data/AuthorData';
-import AuthorForm from '../AuthorForm';
+import AuthorForm from './AuthorForm';
 
 const AuthorCard = ({
   firebaseKey,

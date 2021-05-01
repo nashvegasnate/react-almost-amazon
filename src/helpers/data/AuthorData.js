@@ -14,7 +14,7 @@ const addAuthor = (author) => new Promise((resolve, reject) => {
     .then((response) => {
       const body = { firebaseKey: response.data.name };
       axios.patch(`${dbURL}/authors/${response.data.name}.json`, body)
-        .then(() => resolve(console.warn('Author Added', author)));
+        .then(() => getAuthors().then((authorArray) => resolve(authorArray)));
     })
     .catch((error) => reject(error));
 });
