@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
-import { Button } from 'reactstrap';
+import {
+  Button,
+  Form,
+  FormGroup,
+  Label,
+  Input
+} from 'reactstrap';
 import PropTypes from 'prop-types';
 import { addAuthor, updateAuthor } from '../helpers/data/AuthorData';
 
@@ -35,41 +41,49 @@ const AuthorForm = ({
   };
 
   return (
-    <>
     <div className='author-form'>
-    <form
+    <Form
       id='addAuthorForm'
       autoComplete='off'
       onSubmit={handleSubmit}
-    >
-      <h2>New Author</h2>
-      <label>First Name: </label>
-      <input
+    ><h2>New Author</h2>
+
+    <FormGroup>
+      <Label for='firstName'>First Name: </Label>
+      <Input
         name='first_name'
         type='text'
         placeholder='First Name'
         value={author.first_name}
         onChange={handleInputChange}
-      ></input>
-      <label>Last Name: </label>
-      <input
+      />
+      </FormGroup>
+
+      <FormGroup>
+      <Label for='lastName'>Last Name: </Label>
+      <Input
         name='last_name'
         type='text'
         placeholder='Last Name'
         value={author.last_name}
         onChange={handleInputChange}
-      ></input>
-      <label>Email: </label>
-      <input
+      />
+      </FormGroup>
+
+      <FormGroup>
+      <Label for='email'>Email: </Label>
+      <Input
         name='email'
         type='text'
         placeholder='Email'
         value={author.email}
-        onChange={handleInputChange}></input>
+        onChange={handleInputChange}
+        />
+      </FormGroup>
+
       <Button type='submit' color="info">Submit</Button>
-    </form>
+      </Form>
     </div>
-  </>
   );
 };
 
