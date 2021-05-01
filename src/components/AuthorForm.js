@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from 'reactstrap';
 import PropTypes from 'prop-types';
-import { addAuthor, updateAuthor } from './helpers/data/AuthorData';
+import { addAuthor, updateAuthor } from '../helpers/data/AuthorData';
 
 const AuthorForm = ({
   setAuthors,
